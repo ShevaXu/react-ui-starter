@@ -20,6 +20,9 @@ const HelloWorld = (props) => {
 }
 
 HelloWorld.propTypes = {
+  /**
+	 * Override the inline-styles of the root element
+	 */
   style: PropTypes.object
 }
 
