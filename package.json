@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "test": "standard && mocha --require babel-core/register"
+    "lint": "standard",
+    "test:unit": "mocha --require babel-core/register",
+    "test": "standard && npm run test:unit"
   },
   "keywords": [
     "react",
