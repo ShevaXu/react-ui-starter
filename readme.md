@@ -64,6 +64,25 @@ To fully realize its magic, install [linter-js-standard](https://atom.io/package
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+### [CSS Module](https://github.com/css-modules/css-modules)
+
+> Modular and reusable CSS!
+> No more conflicts. Explicit dependencies. No global scope.
+
+It can be easily config with webpack's css-loader, no more additional package:
+
+```
+loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+```
+
+Notes:
+
+* Inline/element styles (Material-UI) will always override the `class` styles (any CSS), but they can work together
+* CSS beats style when comes to `:hover` and `@media` ...
+* There's still room for Global CSS - e.g., layout ([flexboxgrid](http://flexboxgrid.com/))
+
+TODO: CSS composition
+
 ## License
 
 ISC
