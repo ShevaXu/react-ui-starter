@@ -14,6 +14,8 @@ const PATHS = {
   build: path.join(__dirname, 'build')
 }
 
+const cssLoaders = ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss']
+
 const common = {
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -79,7 +81,7 @@ if (TARGET === 'start' || !TARGET) {
       loaders: [
         {
           test: /\.css$/,
-          loaders: ['style', 'css', 'postcss'],
+          loaders: cssLoaders,
           include: PATHS.src
         }
       ]
@@ -109,7 +111,8 @@ if (TARGET === 'build') {
       loaders: [
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css', 'postcss'),
+          // ExtractTextPlugin.extract() cannot accept argv as array
+          loader: ExtractTextPlugin.extract.apply(null, cssLoaders),
           include: PATHS.src
         }
       ]

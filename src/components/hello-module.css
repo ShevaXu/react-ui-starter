@@ -1,0 +1,9 @@
+.default {
+	margin: auto;
+	margin-top: 5em;
+	padding: 3em;
+	width: 30%;
+	background-color: purple; /*this won't work because Paper has inline style for this*/
+	opacity: 0.5;
+	text-align: center;
+}
