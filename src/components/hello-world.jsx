@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import Paper from 'material-ui/lib/paper'
+import Paper from 'material-ui/Paper'
 
 const defaultStyle = {
   margin: 'auto',
@@ -13,9 +13,9 @@ const HelloWorld = (props) => {
     ? Object.assign({}, defaultStyle, props.style)
     : defaultStyle
   return (
-  <Paper style={style}>
-    <h1>Hello World</h1>
-  </Paper>
+    <Paper style={style}>
+      <h1>Hello World</h1>
+    </Paper>
   )
 }
 
