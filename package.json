@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "lint": "standard",
-    "test:unit": "mocha --require babel-core/register",
+    "test:unit": "ava",
     "test": "npm run lint && npm run test:unit",
     "push": "npm test && git push"
   },
@@ -20,6 +20,7 @@
   "author": "Sheva Xu",
   "license": "ISC",
   "devDependencies": {
+    "ava": "^0.14.0",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
     "babel-plugin-transform-class-properties": "^6.5.2",
@@ -33,7 +34,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.8.1",
-    "mocha": "^2.4.5",
     "postcss-loader": "^0.8.0",
     "react-addons-test-utils": "^0.14.7",
     "style-loader": "^0.13.0",
@@ -47,6 +47,12 @@
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-tap-event-plugin": "^1.0.0"
+  },
+  "ava": {
+    "require": [
+      "babel-core/register"
+    ],
+    "babel": "inherit"
   },
   "standard": {
     "globals": [
